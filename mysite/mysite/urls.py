@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path
 from polls import views
+from django.conf.urls import include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",views.home,name="polls"),
-    path("contact/",views.contact,name="contact"),
-    path("about/",views.about,name="about"),
+    path("polls/",include("polls.urls"))
+
 ]
