@@ -24,5 +24,11 @@
 
         {% endfor %}
     </table>
+    <h2>Add a New Musician</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Insert</button>
+    </form>
 </body>
 </html>
