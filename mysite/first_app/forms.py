@@ -1,7 +1,5 @@
 from django import forms
-from .models import Muscian
 
-class MusicianForm(forms.ModelForm):
-    class Meta:
-        model = Muscian
-        fields = ['first_name', 'last_name', 'instrument']
+class UserForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
