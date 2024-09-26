@@ -1,5 +1,15 @@
 from django import forms
 
 class UserForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
+    # if django not provide a attribute that we can use that html attribute by using widget
+    name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder':'Enter FUll Name','style':'width:300px'}
+    ))
+
+    email = forms.EmailField(widget=forms.TextInput(
+        attrs={'placeholder':'Enter email'}
+    ))
+
+    user_dob = forms.DateField(label='Date of Birth',widget=forms.TextInput(
+        attrs={'type':'date'}
+    ))
